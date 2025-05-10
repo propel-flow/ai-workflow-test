@@ -1,0 +1,55 @@
+{
+  "asset_id": "extreme-wireless-cloud-troubleshooting-iOK_zbIs",
+  "metadata": {
+    "DC.title": "AI Models for Marketing",
+    "DC.abstract": "Overview of AI models useful for marketing teams",
+    "DC.creator": "Marketing Team",
+    "DC.publisher": "Acme Inc",
+    "DC.format": "markdown",
+    "DC.created": "2025-01-15",
+    "DC.issued": "2025-01-20",
+    "DC.modified": "2025-05-01",
+    "DC.dateCopyrighted": "2025",
+    "DC.rightsHolder": "Acme Inc",
+    "DC.accessRights": "internal",
+    "DC.audience": "marketing",
+    "DC.provenance": "internal",
+    "DC.type": "guide",
+    "productCollection": "marketing",
+    "productForm": "guide",
+    "productName": "AI Models",
+    "versionNumber": "1.0",
+    "DC.identifier": "MKT-AI-001",
+    "PII.InContent": "none"
+  },
+  "localized_metadata": {
+    "en": {
+      "DC.alternative": "Marketing AI Models Guide",
+      "DC.reference": "Internal reference only"
+    }
+  },
+  "table_of_contents": [
+    {
+      "title": "Introduction to AI Models",
+      "path": "marketing/outline-agent/knowledge/published/AI-Models-01.md",
+      "order": 1
+    },
+    {
+      "title": "Advanced AI Techniques",
+      "path": "marketing/outline-agent/knowledge/published/AI-Models-01a.md",
+      "order": 2
+    }
+  ],
+  "assets": [
+    {
+      "path": "marketing/outline-agent/knowledge/published/AI-Models-01.md",
+      "type": "markdown",
+      "languages": ["en"]
+    },
+    {
+      "path": "marketing/outline-agent/knowledge/published/AI-Models-01a.md",
+      "type": "markdown",
+      "languages": ["en"]
+    }
+  ]
+}

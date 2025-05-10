@@ -1,0 +1,65 @@
+version: 1.0
+
+teams:
+  marketing:
+    triggers:
+      labels: ["gpt-marketing"]
+    tasks:
+      - id: mk-outline
+        name: "Blog Outline"
+        agent: marketing-outline-agent
+        inputs:
+          - marketing/outline-agent/inputs/topics.md
+        summaries:
+          - marketing/outline-agent/summaries/topics-summary.md
+        knowledge:
+          manifests:
+            - path: "knowledge/extreme-wireless-cloud-troubleshooting-iOK_zbIs.manifest.json"
+              languages: ["en"]
+              tags: ["marketing", "technical"]
+        outputs:
+          - path_template: marketing/outline-agent/outputs/drafts/{{ts}}-outline.md
+        parameters:
+          tone: "conversational"
+          length: "500-700 words"
+        requires_hil: true
+
+  sales:
+    triggers:
+      issues: ["sales-email"]
+    tasks:
+      - id: sl-email
+        name: "Email Sequence"
+        agent: sales-sequence-agent
+        inputs:
+          - sales/email-agent/inputs/templates.md
+        summaries:
+          - sales/email-agent/summaries/templates-summary.md
+        knowledge:
+          manifests:
+            - path: "knowledge/sales-playbook.manifest.json"
+              languages: ["en"]
+              tags: ["sales"]
+        outputs:
+          - path_template: sales/email-agent/outputs/drafts/{{ts}}-sequence.md
+        requires_hil: true
+
+  courses:
+    triggers:
+      schedule: "0 8 * * MON"   # every Monday at 08:00 UTC
+    tasks:
+      - id: cs-outline
+        name: "Course Outline"
+        agent: course-outline-agent
+        inputs:
+          - courses/outline-agent/inputs/course-outline.md
+        summaries:
+          - courses/outline-agent/summaries/course-outline-summary.md
+        knowledge:
+          manifests:
+            - path: "knowledge/instructional-guidelines.manifest.json"
+              languages: ["en"]
+              tags: ["courses"]
+        outputs:
+          - path_template: courses/outline-agent/outputs/drafts/{{ts}}-outline.md
+        requires_hil: true
